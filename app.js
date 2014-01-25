@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 var flash = require('connect-flash')
 var passport = require('passport');
+var auth = require('./config/middleware/authorization');
 
 var app = express();
 require('./config/passport')(passport);
@@ -50,7 +51,7 @@ if ('development' == app.get('env')) {
 }
 
 // Routing
-var routes = require('./routes')(app, passport);
+var routes = require('./routes')(app, passport, auth);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

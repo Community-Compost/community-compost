@@ -5,7 +5,9 @@
 var User_Management = require('../user_management').User_Management;
 var user_management = new User_Management();
 
-module.exports = function(app, passport) {
+/* Passport Middlware */
+
+module.exports = function(app, passport, auth) {
   app.get('/', function(req, res) {
     res.render('index', {title: 'Home'});
   });
@@ -19,6 +21,11 @@ module.exports = function(app, passport) {
     failureRedirect: '/login',
     failureFlash: true
   }));
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+  });
 
   app.get('/register', function(req, res) {
     res.render('register_start', {title: 'Register', message: req.flash('registerMessage')});
@@ -55,6 +62,16 @@ module.exports = function(app, passport) {
 
   app.get('/registration_complete', function(req, res) {
     res.render('register_complete');
+  });
+
+  app.get('/locked', auth.requiresLogin, function(req, res) {
+    
+    user_management.checkRole(req.user.id, "admin", function(error, data) {
+      if (data)
+        res.send('Youre in!');
+      else
+        res.send('locked');
+    });
   });
 
   app.get('/resttest', function(req, res) {

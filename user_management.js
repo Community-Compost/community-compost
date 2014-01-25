@@ -45,6 +45,25 @@ User_Management.prototype.getAllAttributes = function(callback) {
 };
 
 /**
+ * Check if user has correct access
+ * @param {Number} id - Targed User
+ * @param {String} reqRole - The required roll
+ */
+User_Management.prototype.checkRole = function(id, reqRole, callback) {
+
+  User_Properties.findOne({auth_id: id}, function(error, data) {
+    if (error)
+      callback(true, "Unable to check user role")
+
+    if (data.role == reqRole) {
+      callback(null, true);
+    } else {
+      callback(null, false)
+    }
+  });
+};
+
+/**
  * Function get a specific attribute
  */
 User_Management.prototype.getAttribute = function(attr, callback) {
