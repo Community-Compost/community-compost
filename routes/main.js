@@ -39,7 +39,7 @@ module.exports = function(app, passport, auth) {
   });
 
   app.get('/register/:id', function(req, res) {
-    res.render('register_final', {title: 'Register', id: req.params.id, message: req.flash('registerMessage')});    
+    res.render('register_info', {title: 'Register', id: req.params.id, message: req.flash('registerMessage')});    
   });
 
   app.post('/register/:id', function(req, res) {
@@ -56,8 +56,16 @@ module.exports = function(app, passport, auth) {
       if (error)
         res.send("Unable to create User Profile");
 
-      res.redirect('/registration_complete');
+      res.redirect('/register/' + req.params.id + '/subscribe');
     });
+  });
+
+  app.get('/register/:id/subscribe', function(req, res) {
+    res.render('register_subscribe');
+  });
+
+  app.post('/register/:id/subscribe', function(req, res) {
+    res.redirect('/registration_complete');
   });
 
   app.get('/registration_complete', function(req, res) {
@@ -71,15 +79,6 @@ module.exports = function(app, passport, auth) {
         res.send('Youre in!');
       else
         res.send('locked');
-    });
-  });
-
-  app.get('/resttest', function(req, res) {
-    res.send({
-      "userID": "1234567890",
-      "name": "John Doe",
-      "address": "123 Oak Street, Denton TX 76201",
-      "credits": "17"
     });
   });
 };

@@ -14,7 +14,8 @@ var userPropertiesSchema = new Schema({
   name: String,
   address: String,
   zip_code: Number,
-  residents: Number
+  residents: Number,
+  weight: Number
 });
 
 

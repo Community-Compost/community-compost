@@ -1,0 +1,14 @@
+{
+  test_accounts: [{
+    email:'joe.pants@emails.com',
+    password: testpw,
+    properties: {
+      role: 'member',
+      bin_id: '1234567890',
+      name: 'joe pants',
+      address: '1234 ilivehere',
+      zip_code: 76210,
+      residents: 3,
+    }
+  }]
+}
