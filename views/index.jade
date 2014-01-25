@@ -1,5 +1,86 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    // Marketing messaging and featurettes
+    // Wrap the rest of the page in another container to center all the content.
+    .container.marketing
+      // START THE FEATURETTES
+      .row.featurette.first
+        .col-md-7
+          h2.featurette-heading
+            | First featurette heading.
+            span.text-muted It'll blow your mind.
+          p.lead
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+
+      hr.featurette-divider
+
+      // Three columns of text below the carousel
+      .row
+        .col-lg-4
+          img.img-circle(data-src='holder.js/140x140', alt='Generic placeholder image')
+          h2 Heading
+          p
+            | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+          p
+            a.btn.btn-default(href='#', role='button') View details »
+        // /.col-lg-4
+        .col-lg-4
+          img.img-circle(data-src='holder.js/140x140', alt='Generic placeholder image')
+          h2 Heading
+          p
+            | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+          p
+            a.btn.btn-default(href='#', role='button') View details »
+        // /.col-lg-4
+        .col-lg-4
+          img.img-circle(data-src='holder.js/140x140', alt='Generic placeholder image')
+          h2 Heading
+          p
+            | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+          p
+            a.btn.btn-default(href='#', role='button') View details »
+        // /.col-lg-4
+      // /.row
+
+
+      hr.featurette-divider
+      .row.featurette
+        .col-md-5
+          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+        .col-md-7
+          h2.featurette-heading
+            | Oh yeah, it's that good.
+            span.text-muted See for yourself.
+          p.lead
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      hr.featurette-divider
+      .row.featurette
+        .col-md-7
+          h2.featurette-heading
+            | And lastly, this one.
+            span.text-muted Checkmate.
+          p.lead
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+      hr.featurette-divider
+      // /END THE FEATURETTES
+
+      // FOOTER
+      footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | © 2013 Company, Inc. ·
+          a(href='#') Privacy
+          | ·
+          a(href='#') Terms
+    // /.container
+    // Bootstrap core JavaScript
+    // Placed at the end of the document so the pages load faster
+    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/holder.js')
