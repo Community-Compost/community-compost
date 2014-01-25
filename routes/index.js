@@ -1,8 +1,7 @@
-
-/*
- * GET home page.
+/**
+ * Routing index
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+module.exports = function(app) {
+  require('./main')(app);
 };
