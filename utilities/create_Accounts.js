@@ -34,11 +34,13 @@ User_Profile.findOne({'name': test_user['properties']['name']}, function(error, 
 
       newProfile = new User_Profile;
       newProfile.auth_id = user.id;
+      newProfile.name = test_user['properties']['name'];
       newProfile.role = test_user['properties']['role'];
       newProfile.bin_id = test_user['properties']['bin_id'];
       newProfile.address = test_user['properties']['address'];
       newProfile.zip_code = test_user['properties']['zip_code'];
       newProfile.residents = test_user['properties']['residents'];
+      newProfile.weight = 0;
 
       newProfile.save(function(error) {
         if (error)

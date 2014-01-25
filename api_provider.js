@@ -20,4 +20,15 @@ API_Provider.prototype.getUserInfo = function(id, callback) {
   });
 };
 
+/**
+ * Take Post data from app, insert in database.
+ * @param {Number} bin_id - bin_id scanned from app
+ * @param {Number} weight - weight entered from app
+ */
+API_Provider.prototype.setWeight = function(id, weight, callback) {
+  User_Profile.findOneAndUpdate({'bin_id': id,}, {$set: {"weight": weight}}, function(error, data) {
+    
+  });
+};
+
 exports.API_Provider = API_Provider;
