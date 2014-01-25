@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .row
+    .col-md-12
+      .page-header
+        h2= title
+      - each post in posts
+        .blog_post
+          .title
+            h3
+              a(href="/blog/#{post.id}")= post.title
+          .body= post.body

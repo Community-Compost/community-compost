@@ -13,7 +13,8 @@ var userSchema = new Schema({
     email: String,
     password: String
   },
-  role: String
+  role: String,
+  bin_id: Number
 });
 
 /**

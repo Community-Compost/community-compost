@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .row
+    .col-md-12
+      .page-header
+        h2= title
+      form(action='/blog/new_post' method='post')
+        .form-group
+          label Title
+          input.form-control(type='text' name='title')
+        .form-group
+          label Post
+          textarea.form-control(type='text' name='post_body' rows='20')
+        button.btn.btn-primary.btn-lg(type='submit') Publish Post
