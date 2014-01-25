@@ -11,6 +11,7 @@
     "stylus": "*",
     "passport": "0.1.18",
     "passport-local": "0.1.6",
+    "connect-flash": "latest",
     "bcrypt-nodejs" : "latest",
     "stripe": "~2.3.4"
   }
