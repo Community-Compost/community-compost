@@ -28,6 +28,11 @@ module.exports = function(app, passport) {
   }));
 
   app.get('/resttest', function(req, res) {
-    res.send('It Worked!');
+    res.send({
+      "userID": "1234567890",
+      "name": "John Doe",
+      "address": "123 Oak Street, Denton TX 76201",
+      "credits": "17"
+    });
   });
 };
