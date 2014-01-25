@@ -26,4 +26,8 @@ module.exports = function(app, passport) {
     failureRedirect: '/register',
     failureFlash: true
   }));
+
+  app.get('/resttest', function(req, res) {
+    res.send('It Worked!');
+  });
 };
