@@ -7,6 +7,9 @@ var Blog_Post = require('./models/blogSchema');
 
 Blog_Provider = function() {};
 
+/**
+ * Return all Blog Posts
+ */
 Blog_Provider.prototype.getAllPosts = function(callback) {
 
   Blog_Post.find({}, function(error, data) {
@@ -17,6 +20,10 @@ Blog_Provider.prototype.getAllPosts = function(callback) {
   });
 };
 
+/**
+ * Get a specific post using an id
+ * @param {Number} id - Post ID
+ */
 Blog_Provider.prototype.getPostById = function(id, callback) {
 
   Blog_Post.findById(id, function(error, data) {
@@ -27,6 +34,10 @@ Blog_Provider.prototype.getPostById = function(id, callback) {
   });
 };
 
+/**
+ * Add new Blog Post
+ * @param {String} post - Post attributes to add
+ */
 Blog_Provider.prototype.addNewPost = function(post, done) {
 
   var newPost = new Blog_Post({title: post.title, body: post.content});

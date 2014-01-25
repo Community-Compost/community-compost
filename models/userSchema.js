@@ -5,7 +5,7 @@
 var db_config = require('../config/database');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt   = require('bcrypt-nodejs');
+var bcrypt = require('bcrypt-nodejs');
 var db = mongoose.createConnection(db_config.server, db_config.database);
 
 var userSchema = new Schema({
@@ -13,8 +13,6 @@ var userSchema = new Schema({
     email: String,
     password: String
   },
-  role: String,
-  bin_id: Number
 });
 
 /**

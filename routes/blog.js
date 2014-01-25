@@ -9,7 +9,6 @@ module.exports = function(app) {
   app.get('/blog', function(req, res) {
 
     blog_provider.getAllPosts(function(error, data) {
-      console.log(data);
       res.render('blog', {title: 'Blog', posts: data});
     });
   });

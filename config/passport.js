@@ -4,6 +4,7 @@
 
 var mongoose = require('mongoose');
 var LocalStrategy = require('passport-local').Strategy;
+var validator = require('validator');
 
 /* Models */
 var User = require('../models/userSchema');
@@ -29,9 +30,17 @@ module.exports = function(passport) {
     passReqToCallback: true
   },
   function(req, email, password, done) {
-    User.findOne({'local.email': email}, function(error, user){
+    User.findOne({'local.email': email}, function(error, user) {
       if (error)
         return done(error);
+
+      // Check if valid e-mail
+      if (!validator.isEmail(email))
+        return done(null, false, req.flash('registerMessage', 'Must use a valid email!'));
+
+      // If Password is blank, fail
+      if (password == '')
+        return done(null, false, req.flash('registerMessage', 'Password must not be blank'))
 
       // Is that name taken?
       if (user) {
