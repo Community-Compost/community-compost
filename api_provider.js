@@ -26,8 +26,20 @@ API_Provider.prototype.getUserInfo = function(id, callback) {
  * @param {Number} weight - weight entered from app
  */
 API_Provider.prototype.setWeight = function(id, weight, callback) {
-  User_Profile.findOneAndUpdate({'bin_id': id,}, {$set: {"weight": weight}}, function(error, data) {
-    
+  var bin_id = id;
+  var bin_weight = weight;
+  User_Profile.findOne({'bin_id': id}, function(error, data) {
+    if (error)
+      callback(true, "Unable to update user.")
+
+    var newWeight = bin_weight + data.weight;
+
+    User_Profile.findOneAndUpdate({'bin_id': id,}, {$set: {"weight": newWeight}}, function(error, data) {
+      if (error)
+        callback(true, "Unable to update user.");
+
+      callback(null, data);
+    });
   });
 };
 

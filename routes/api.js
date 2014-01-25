@@ -19,6 +19,11 @@ module.exports = function(app) {
   });
 
   app.post('/api/:id', function(req, res) {
-    
+    api_provider.setWeight(req.body.bin_id, req.body.weight, function(error, data) {
+      if (error)
+        res.send('Error');
+
+      res.send('Success');
+    });
   });
 };
