@@ -5,6 +5,7 @@
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
+  font-family:'Helvetica Neue', 'Helvetica','Ariel' !important;
 }
 
 
@@ -75,8 +76,32 @@ body {
   margin-bottom: 20px;
 }
 .marketing h2 {
-  font-weight: normal;
+  font-weight: 700;
+  font-size:80px;
 }
+
+.marketing h2 .sub{
+  font-size:60px;
+  font-weight:200;
+}
+
+.featurette.first .top-img{
+  height:430px;
+  background:red;
+}
+
+.featurette.first .top-img img{
+transition: all 2s;
+-webkit-transition: all 2s; /* Safari */
+}
+
+.top-img .rotate{
+
+transform:rotate(90deg);
+-ms-transform:rotate(90deg); /* IE 9 */
+-webkit-transform:rotate(90deg); /* Safari and Chrome */
+}
+
 .marketing .col-lg-4 p {
   margin-left: 10px;
   margin-right: 10px;
@@ -87,12 +112,12 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 50px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
 .featurette-heading {
-  font-weight: 300;
+  font-weight: 100;
   line-height: 1;
   letter-spacing: -1px;
 }

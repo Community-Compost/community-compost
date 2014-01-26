@@ -179,6 +179,8 @@
   // =================
 
   $(document).on('click.bs.carousel.data-api', '[data-slide], [data-slide-to]', function (e) {
+    alert('hello');
+  $('img').addClass('rotate');
     var $this   = $(this), href
     var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
     var options = $.extend({}, $target.data(), $this.data())
