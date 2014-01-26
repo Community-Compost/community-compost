@@ -24,7 +24,7 @@ html(lang='en')
     // NAVIGATION
     .navbar-wrapper
       .container
-        .navbar.navbar-inverse.navbar-static-top(role='navigation')
+        .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
           .container
             .navbar-header
               button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -58,5 +58,9 @@ html(lang='en')
                       a(href='#') Separated link
                     li
                       a(href='#') One more separated link
+    .container
+      block content
+      script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+      script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+      script(src='/bootstrap/js/bootstrap.min.js')
 
-block content
