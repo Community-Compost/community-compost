@@ -26,7 +26,7 @@ body {
   margin-top:20px;
 }
 
-/* Flip around the padding for proper display in narrow viewports */
+/* Flip around the padding for proper displadgdfy in narrow viewports */
 .navbar-wrapper .container {
     padding-left:  15px;
     padding-right: 15px;
