@@ -6,6 +6,7 @@ body {
   padding-bottom: 40px;
   color: #000000;
   font-family:'Helvetica Neue', 'Helvetica','Ariel' !important;
+  min-width:500px;
 }
 
 
@@ -129,11 +130,21 @@ body {
   text-align:center;
 }
 
+.featurette.first{
+  margin-top:160px;
+}
+
+.featurette.first .top-img{
+  width: 350px;
+margin-left: auto;
+margin-right: auto;
+}
+
 .featurette.topsoil{
   background:url('/images/topsoil.png');
   background-attachment:fixed;
 
-  padding: 33px 22px 22px;
+  padding: 33px 22px 34px 22px;
 }
 .featurette.topsoil .featurette-heading{
   color:white;
@@ -221,6 +232,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   letter-spacing: -1px;
 }
 
+.featurette ol, .featurette ul{
+  font-size:21px;
+}
+
 
 
 /* BUTTONS */
@@ -240,6 +255,7 @@ border-width: 2px;
 background-color: #6d993f;
 
 }
+
 
 
 /* RESPONSIVE CSS
@@ -286,7 +302,7 @@ background-color: #6d993f;
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 80px;
+    margin-top: 50px;
   }
   
   .row.featurette.first {

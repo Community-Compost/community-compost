@@ -15,21 +15,22 @@ block content
             | Compost Dention is a community curbside composting service in Denton, TX.
             div.btn.btn-success.pull-right.sign-up
               | Sign Up now!
-        .col-md-4.col-xs-12.top-img
-          img.featurette-image.img-responsive(src='/images/logo.png')
-          div.captions
-            div.cap.caption1.lead
-              span.header
-                | Step 1: 
-              | Sign up and collect compostables at home.
-            div.cap.caption2.lead(style='display:none')
-              span.header
-                | Step 2: 
-              | We pick up your compostables weekly.
-            div.cap.caption3.lead(style='display:none')
-              span.header
-                | Step 3: 
-              | You benefit when high quality compost is returned to our community.
+        .col-md-4.col-xs-12
+          div.top-img
+            img.featurette-image.img-responsive(src='/images/logo.png')
+            div.captions
+              div.cap.caption1.lead
+                span.header
+                  | Step 1: 
+                | Sign up and collect compostables at home.
+              div.cap.caption2.lead(style='display:none')
+                span.header
+                  | Step 2: 
+                | We pick up your compostables weekly.
+              div.cap.caption3.lead(style='display:none')
+                span.header
+                  | Step 3: 
+                | You benefit when high quality compost is returned to our community.
 
       hr.featurette-divider
 
@@ -37,7 +38,7 @@ block content
       .row
         .col-lg-4
           img.img-circle(src='/images/icon1.png')
-          h3 Connect
+          h3 Join
           p
             | Sign up by clicking the button below. We will send you an empty bin so you can start collecting compostables right away.
           p
@@ -55,9 +56,9 @@ block content
           img.img-circle(src='/images/icon3.png')
           h3 Community
           p
-            | We donate compost to local gardens, who use it to fertilize their soil. Local gardens grow food and sustain our community.
+            | We donate compost to local gardens, who use it to fertilize their soil and produce fresh food. Local gardens sustain our community.
           p
-            a.btn.btn-success(href='#', role='button') Learn More
+            a.btn.btn-success(href='#education', role='button') Learn More
         // /.col-lg-4
       // /.row
 
@@ -65,32 +66,40 @@ block content
       hr.featurette-divider
       .row.featurette.topsoil
         .col-md-5
-          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+          img.featurette-image.img-responsive(src='/images/photo1.jpg')
         .col-md-7
           h2.featurette-heading
             | Why Compost?
             div.sub See for yourself.
           p.lead
-            | Nearly 30% of landfill waste is compostable - Reduce waste - Support local farms and gardens
+            | Nearly 30% of landfill waste is compostable. Reduce waste - Support local farms and gardens
             div.btn.btn-success(href='#', role='button') Buy A Compost Bin
-      hr.featurette-divider
+      hr.featurette-divider(id='education')
       .row.featurette
         .col-md-7
           h2.featurette-heading
             | Educate Yourself
             div.sub Links and Resources
-          ol
+          ul
             li
-              | Once a week, we gather up compostable waste of food scraps and yard clippings (2.5 gal) from residents and small business.  
+              a(href='http://compostingcouncil.org/composting-for-teachers-and-students/') US Composting Council
             li
-              | We take the compostable waste to 14.5 acre garden (composting site)
-            li
-              | When it is ready, we donate it to local urban farms, who use it to fertilize their soil.  They grow food and give back to the community. (LOOP)
+              | Guidelines for Compost Quality and Nutrient Management
+              br
+              a(href='http://www.ccme.ca/assets/pdf/compostgdlns_1340_e.pdf') 
+                | Guidelines for Compost Quality (CCME)
+              br
+              a(href='http://compostingcouncil.org/test-methods-parameters/')
+                | Composting Test Methods and Parameters (USCC)
+              br
+              a(href='http://nevegetable.org/cultural-practices/compost-and-manure-use-and-nutrient-management')
+                | New England Vegetable Management Guide (NEVegetable)
+
           div.btn.btn-success.pull-right(href='#', role='button') Learn More
  
 
         .col-md-5
-          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+          img.featurette-image.img-responsive(src='/images/photo2.jpg')
 
       hr.featurette-divider
       // /END THE FEATURETTES
@@ -100,10 +109,7 @@ block content
         p.pull-right
           a(href='#') Back to top
         p
-          | © 2013 Company, Inc. ·
-          a(href='#') Privacy
-          | ·
-          a(href='#') Terms
+          | © 2014 Compost Denton
     // /.container
     // Bootstrap core JavaScript
     // Placed at the end of the document so the pages load faster
