@@ -6,13 +6,15 @@ block content
     .container.marketing
       // START THE FEATURETTES
       .row.featurette.first
-        .col-md-8
+        .col-md-8.col-xs-12
           h2.featurette-heading
             | Compost Denton
             div.sub Clean Composting
           p.lead
             | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-        .col-md-4.top-img
+            div.btn.btn-primary.pull-right.sign-up
+              | Sign Up now!
+        .col-md-4.col-xs-12.top-img
           img.featurette-image.img-responsive(src='/images/logo.png', alt='Generic placeholder image')
           div.captions
             div.cap.caption1
@@ -54,23 +56,32 @@ block content
 
 
       hr.featurette-divider
-      .row.featurette
+      .row.featurette.topsoil
         .col-md-5
           img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
         .col-md-7
           h2.featurette-heading
-            | Oh yeah, it's that good.
-            span.text-muted See for yourself.
+            | Why Compost?
+            div.sub See for yourself.
           p.lead
-            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            | Nearly 30% of landfill waste is compostable - Reduce waste - Support local farms and gardens
+            div.btn.btn-success(href='#', role='button') Buy A Compost Bin
       hr.featurette-divider
       .row.featurette
         .col-md-7
           h2.featurette-heading
-            | And lastly, this one.
-            span.text-muted Checkmate.
-          p.lead
-            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            | Educate Yourself
+            div.sub Links and Resources
+          ol
+            li
+              | Once a week, we gather up compostable waste of food scraps and yard clippings (2.5 gal) from residents and small business.  
+            li
+              | We take the compostable waste to 14.5 acre garden (composting site)
+            li
+              | When it is ready, we donate it to local urban farms, who use it to fertilize their soil.  They grow food and give back to the community. (LOOP)
+          div.btn.btn-success.pull-right(href='#', role='button') Learn More
+ 
+
         .col-md-5
           img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
 
