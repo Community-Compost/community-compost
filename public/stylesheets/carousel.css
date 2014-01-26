@@ -6,6 +6,7 @@ body {
   padding-bottom: 40px;
   color: #000000;
   font-family:'Helvetica Neue', 'Helvetica','Ariel' !important;
+  min-width:500px;
 }
 
 
@@ -26,7 +27,7 @@ body {
   margin-top:20px;
 }
 
-/* Flip around the padding for proper display in narrow viewports */
+/* Flip around the padding for proper displadgdfy in narrow viewports */
 .navbar-wrapper .container {
     padding-left:  15px;
     padding-right: 15px;
@@ -129,11 +130,21 @@ body {
   text-align:center;
 }
 
+.featurette.first{
+  margin-top:160px;
+}
+
+.featurette.first .top-img{
+  width: 350px;
+margin-left: auto;
+margin-right: auto;
+}
+
 .featurette.topsoil{
   background:url('/images/topsoil.png');
   background-attachment:fixed;
 
-  padding: 33px 22px 22px;
+  padding: 33px 22px 34px 22px;
 }
 .featurette.topsoil .featurette-heading{
   color:white;
@@ -221,11 +232,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   letter-spacing: -1px;
 }
 
-  .row.featurette.first {
-    margin-top: 170px;
-  }
+.featurette ol, .featurette ul{
+  font-size:21px;
+}
+
+
 
 /* BUTTONS */
+
+.btn-primary{
+  border-width:2px;
+}
 
 .btn-success{
   color: #FFF;
@@ -237,6 +254,11 @@ border-width: 2px;
 .btn-success:hover{
 background-color: #6d993f;
 
+}
+
+/* REGISTRATION */
+.page-header{
+  margin: 100px 0 20px;
 }
 
 
@@ -261,7 +283,7 @@ background-color: #6d993f;
   }
 
    .navbar .collapse .title{
-    margin-left:-13px;@media (min-width: 992px)
+    margin-left:-13px;
   }
 
   /* Bump up size of carousel content */
@@ -276,17 +298,18 @@ background-color: #6d993f;
   }
 
   .row.featurette.first {
-    margin-top: 25px;
+    margin-top: 80px;
+    margin-bottom:-70px;
   }
 
 }
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 80px;
+    margin-top: 50px;
   }
   
   .row.featurette.first {
-    margin-top: 25px;
+    margin-top: 80px;
   }
 }

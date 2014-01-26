@@ -9,19 +9,26 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css') 
 
   body
-    .container
-      .navbar-header.pull-right
-        .navbar-collapse.collapse
-          if (!loggedin && title != 'Login' && title != 'Register')
-            ul.nav.navbar-nav
+    .navbar-wrapper
+      .container
+        .navbar(role='navigation')
+          .navbar-header
+            span.h1
+              | Compost Denton
+          if (!loggedin && title != 'Login' && title != "Register")
+            ul.nav.navbar-nav.pull-right
               li
                 a(href='/register')
-                    button.btn.btn-success.btn-xl(type='button' href='/register')
-                      | Register
+                  button.btn.btn-success(type='button') Sign Up
               li
                 a(href='/login')
-                  button.btn.btn-primary.btn-xl(type='button' href='/login')
-                    | Login
+                  button.btn.btn-primary(type='button') Login
+          else if (title != 'Login' && title != "Register")
+            ul.nav.navbar-nav.pull-right
+              li
+                a(href='/logout')
+                  button.btn.btn-success(type='button') Logout
+
     .container
       block content
       script(src='https://code.jquery.com/jquery-1.10.2.min.js')
