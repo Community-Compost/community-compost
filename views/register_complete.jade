@@ -7,5 +7,11 @@ block content
         h1
           | Registration Complete!
 
-      p Congatulations! You're on your way to a more sustainable lifestyle!
-      a(href='/') Go Home
+      h2 Thanks, #{name}!
+      h3 You're well on your way to a more sustainable lifestyle
+      br
+      a(href='/#{id}/profile') Check out your profile
+      br
+      br
+      p Or go
+        a(href='/')  Home

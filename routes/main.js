@@ -9,11 +9,12 @@ var user_management = new User_Management();
 
 module.exports = function(app, passport, auth) {
   app.get('/', function(req, res) {
-    res.render('index', {title: 'Home'});
+    console.log(req.isAuthenticated());
+    res.render('index', {title: 'Home', loggedin: req.isAuthenticated()});
   });
 
   app.get('/login', function(req, res) {
-    res.render('login', {title: 'Login', message: req.flash('loginMessage')});
+    res.render('login', {title: 'Login', message: req.flash('loginMessage'), loggedin: req.isAuthenticated()});
   });
 
   app.post('/login', passport.authenticate('local-login', {
@@ -29,7 +30,7 @@ module.exports = function(app, passport, auth) {
   });
 
   app.get('/register', function(req, res) {
-    res.render('register_start', {title: 'Register', message: req.flash('registerMessage')});
+    res.render('register_start', {title: 'Register', message: req.flash('registerMessage'), loggedin: req.isAuthenticated()});
   });
 
   app.post('/register', passport.authenticate('local-register', {
@@ -40,7 +41,7 @@ module.exports = function(app, passport, auth) {
   });
 
   app.get('/register/:id', function(req, res) {
-    res.render('register_info', {title: 'Register', id: req.params.id, message: req.flash('registerMessage')});    
+    res.render('register_info', {title: 'Register', id: req.params.id, message: req.flash('registerMessage'), loggedin: req.isAuthenticated()});    
   });
 
   app.post('/register/:id', function(req, res) {
@@ -62,24 +63,20 @@ module.exports = function(app, passport, auth) {
   });
 
   app.get('/register/:id/subscribe', function(req, res) {
-    res.render('register_subscribe', {id: req.params.id});
+    res.render('register_subscribe', {id: req.params.id, loggedin: req.isAuthenticated()});
   });
 
   app.post('/register/:id/subscribe', function(req, res) {
     res.redirect('/registration_complete');
   });
 
-  app.get('/registration_complete', function(req, res) {
-    res.render('register_complete');
-  });
+  app.get('/registration_complete', auth.requiresLogin, function(req, res) {
 
-  app.get('/locked', auth.requiresLogin, function(req, res) {
-    
-    user_management.checkRole(req.user.id, "admin", function(error, data) {
-      if (data)
-        res.send('Youre in!');
-      else
-        res.send('locked');
+    user_management.getAllAttributes(req.user.id, function(error, data) {
+      if (error)
+        res.send('Everything broke');
+
+      res.render('register_complete', {name: data[0].name, id: data[0].auth_id, loggedin: req.isAuthenticated()});
     });
   });
 };

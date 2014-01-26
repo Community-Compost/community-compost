@@ -12,17 +12,16 @@ html(lang='en')
     .container
       .navbar-header.pull-right
         .navbar-collapse.collapse
+          if (!loggedin && title != 'Login' && title != 'Register')
             ul.nav.navbar-nav
               li
                 a(href='/register')
-                  button.btn.btn-success.btn-xl(type='button' href='/register')
-                    | Register
+                    button.btn.btn-success.btn-xl(type='button' href='/register')
+                      | Register
               li
                 a(href='/login')
                   button.btn.btn-primary.btn-xl(type='button' href='/login')
                     | Login
-
-
     .container
       block content
       script(src='https://code.jquery.com/jquery-1.10.2.min.js')

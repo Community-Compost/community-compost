@@ -4,7 +4,20 @@ body
 a
   color: #00B7FF
 
-.nav a
+
+
+.navbar
+  margin-bottom: 0px;
+
+.navbar-nav > li
+  margin: 0px;
+.navbar-nav > li > a
+  padding-top: 0px
+
+.dropdown-menu > li > a:hover 
+  background-color: none 
+
+.nav li a
   margin: 0px
 
 .btn-primary
@@ -17,6 +30,13 @@ a
   background-color: #b3ee75;
   border-color: #8fad5c;
 
+.btn-primary:focus,
+.btn-primary.active
+  color: #FFF;
+  background-color: #96c961;
+  border-color: #8fad5c;
+  border-width: 2px;
+
 @media (min-width: 992px)
   .container
     .marketing
@@ -26,6 +46,6 @@ a
             margin-top: 25px;
 
 @media (min-width: 768px)
-
   .profile-title h1
     font-size: 7em
+

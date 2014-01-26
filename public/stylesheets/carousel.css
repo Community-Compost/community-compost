@@ -261,7 +261,7 @@ background-color: #6d993f;
   }
 
    .navbar .collapse .title{
-    margin-left:-13px;
+    margin-left:-13px;@media (min-width: 992px)
   }
 
   /* Bump up size of carousel content */

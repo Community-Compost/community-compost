@@ -5,7 +5,19 @@ body {
 a {
   color: #00b7ff;
 }
-.nav a {
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar-nav > li {
+  margin: 0px;
+}
+.navbar-nav > li > a {
+  padding-top: 0px;
+}
+.dropdown-menu > li > a:hover {
+  background-color: none;
+}
+.nav li a {
   margin: 0px;
 }
 .btn-primary {
@@ -17,6 +29,13 @@ a {
 .btn-primary:hover {
   background-color: #b3ee75;
   border-color: #8fad5c;
+}
+.btn-primary:focus,
+.btn-primary.active {
+  color: #fff;
+  background-color: #96c961;
+  border-color: #8fad5c;
+  border-width: 2px;
 }
 @media (min-width: 992px) {
   .container .marketing .row .featurette .first {

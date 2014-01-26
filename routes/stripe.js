@@ -25,7 +25,7 @@ module.exports = function(app) {
         console.log(customer);
         var id = customer.id;
         console.log("Error while process " + id);
-        res.send('ok');
+        res.redirect('/registration_complete');
       });
     });
   });
