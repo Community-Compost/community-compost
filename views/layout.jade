@@ -2,7 +2,7 @@ doctype
 html(lang='en')
   head
     link(rel='shortcut icon', href='../../docs-assets/ico/favicon.png')
-    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+    link(href='/bootstrap/css/bootstrap.css', rel='stylesheet')
     link(rel='stylesheet', href='/stylesheets/style.css') 
     link(rel='stylesheet' href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
     block head_script_includes
@@ -16,7 +16,7 @@ html(lang='en')
                 button.btn.btn-primary.btn-xl(type='button')
                   span.fa.fa-sign-in
                   | &nbsp;&nbsp;Sign in
-
+#{varname}
     .container
       block content
       script(src='https://code.jquery.com/jquery-1.10.2.min.js')

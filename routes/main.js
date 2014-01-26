@@ -8,6 +8,9 @@ var user_management = new User_Management();
 /* Passport Middlware */
 
 module.exports = function(app, passport, auth) {
+  app.get('/member', function(req, res) {
+    res.render('member_profile');
+  });
   app.get('/', function(req, res) {
     res.render('index', {title: 'Home'});
   });
@@ -61,7 +64,7 @@ module.exports = function(app, passport, auth) {
   });
 
   app.get('/register/:id/subscribe', function(req, res) {
-    res.render('register_subscribe');
+    res.render('register_subscribe', {id: req.params.id});
   });
 
   app.post('/register/:id/subscribe', function(req, res) {

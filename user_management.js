@@ -34,9 +34,9 @@ User_Management = function() {};
  * Function to return all user Attributes
  * @param {Number} id - id of targeted user.
  */
-User_Management.prototype.getAllAttributes = function(callback) {
+User_Management.prototype.getAllAttributes = function(id, callback) {
 
-  User_Properties.find({}, function(error, data) {
+  User_Properties.find({auth_id: id}, function(error, data) {
     if (error)
       callback(true, "Unable to get User Attributes");
 

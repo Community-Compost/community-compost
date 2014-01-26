@@ -17,7 +17,7 @@ block content
       h3 Subscribe
       #payment-errors
 
-      form(action='/register/#{id}/subscribe' method='POST' id='subscribe-form')
+      form(action='/register/#{id}/subscribe/basic' method='POST' id='subscribe-form')
         .row
           .form-group.col-md-6
             label Credit Card Number
@@ -25,11 +25,12 @@ block content
         .row
           .form-group.col-md-4
             label CVC
-            input.form-control.card-cvc(type='text')
+            input.form-control(type='text' id='card-cvc')
         .row
           .form-group.col-md-4
             label Card Expiration Date (MM/YYYY)
-            input.form-control.card-expir-date(type='text')
+            input.form-control(type='text' id='card-expir-date')
+        input(type='hidden' name='amount' value='2000' id='cc-amount')
         button.btn-primary.btn-lg(type='submit' id='subscribe-button') Subscribe
 
 block footer_script_includes
