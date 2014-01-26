@@ -26,14 +26,13 @@ html(lang='en')
               li
                 a(href='/login')
                   button.btn.btn-primary(type='button') Login
-          else if (title != 'Login' && title != "Register")
+          else if (title != 'Login' && title != "Register" && loggedin)
             ul.nav.navbar-nav.pull-right
               li
                 a(href='/logout')
                   button.btn.btn-success(type='button') Logout
-              if (title != 'Profile' && id != 0)
-                li
-                  a(href='/#{id}/profile')
+              li
+                a(href='/#{id}/profile')
 
     .container
       block content
