@@ -28,9 +28,10 @@ html(lang='en')
                   button.btn.btn-primary(type='button') Login
           else if (title != 'Login' && title != "Register" && loggedin)
             ul.nav.navbar-nav.pull-right
-              li
-                a(href='/#{id}/profile')
-                  button.btn.btn-primary(type='button') My Profile
+              if (title != 'Profile')
+                li
+                  a(href='/#{id}/profile')
+                    button.btn.btn-primary(type='button') My Profile
               li
                 a(href='/logout')
                   button.btn.btn-success(type='button') Logout
