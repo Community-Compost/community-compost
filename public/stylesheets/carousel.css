@@ -87,19 +87,34 @@ body {
 
 .featurette.first .top-img{
   height:430px;
-  background:red;
-}
 
-.featurette.first .top-img img{
-transition: all 60s;
--webkit-transition: all 60s; /* Safari */
+  transform:rotate(0deg);
+  -ms-transform:rotate(0deg); /* IE 9 */
+  -webkit-transform:rotate(0deg); /* Safari and Chrome */
+
+  transition: all 0s;
+  -webkit-transition: all 0s; /* Safari */
 }
 
 .top-img .rotate{
 
-transform:rotate(360deg);
--ms-transform:rotate(360deg); /* IE 9 */
--webkit-transform:rotate(360deg); /* Safari and Chrome */
+transition: all 60s;
+-webkit-transition: all 60s; /* Safari */
+transition-timing-function: linear;
+
+transform:rotate(-360deg);
+-ms-transform:rotate(-360deg); /* IE 9 */
+-webkit-transform:rotate(-360deg); /* Safari and Chrome */
+}
+
+.captions{
+  position:relative;
+}
+.top-img .cap{
+  position:absolute;
+  width:300px;
+  margin-top:30px;
+  text-align:center;
 }
 
 .marketing .col-lg-4 p {

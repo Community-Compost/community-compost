@@ -203,9 +203,42 @@
     $('[data-ride="carousel"]').each(function () {
       var $carousel = $(this)
       $carousel.carousel($carousel.data())
-    })
+    });
 
-    $('img').addClass('rotate');
-  })
+    imgRotate();
+  });
 
 }(jQuery);
+
+function imgRotate(){
+   $('img').removeClass('rotate');
+
+   setTimeout(function(){
+     $('img').addClass('rotate');
+   }, 10);
+
+  setTimeout(function(){
+    $('.caption1').fadeOut();
+    $('.caption2').fadeIn();
+
+    setTimeout(function(){
+      $('.caption2').fadeOut();
+      $('.caption3').fadeIn();
+
+      setTimeout(function(){
+        $('.caption3').fadeOut();
+        $('.caption1').fadeIn();
+      
+      }, 20003);
+
+    }, 20003);
+
+  }, 20003);
+
+   
+  setTimeout(function(){
+
+    imgRotate();
+
+  }, 60010);
+}
