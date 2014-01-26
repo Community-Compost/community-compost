@@ -5,25 +5,8 @@ body {
 a {
   color: #00b7ff;
 }
-.nav li {
-  margin-left: 15px;
-}
-.nav li .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-.nav li .navbar {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.nav li .pull-right {
-  padding-right: 15px;
-}
-.btn-warning {
-  color: #fff;
-  background-color: #608737;
-  border-color: #4f6f2d;
-  border-width: 2px;
+.nav a {
+  margin: 0px;
 }
 .btn-primary {
   color: #fff;
@@ -31,8 +14,14 @@ a {
   border-color: #8fad5c;
   border-width: 2px;
 }
-.content {
-  margin-top: 20px;
+.btn-primary:hover {
+  background-color: #b3ee75;
+  border-color: #8fad5c;
+}
+@media (min-width: 992px) {
+  .container .marketing .row .featurette .first {
+    margin-top: 25px;
+  }
 }
 @media (min-width: 768px) {
   .profile-title h1 {

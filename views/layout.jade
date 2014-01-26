@@ -14,11 +14,13 @@ html(lang='en')
         .navbar-collapse.collapse
             ul.nav.navbar-nav
               li
-                button.btn.btn-warning.btn-xl(type='button')
-                  | Register
+                a(href='/register')
+                  button.btn.btn-success.btn-xl(type='button' href='/register')
+                    | Register
               li
-                button.btn.btn-primary.btn-xl(type='button')
-                  | Login
+                a(href='/login')
+                  button.btn.btn-primary.btn-xl(type='button' href='/login')
+                    | Login
 
 
     .container
