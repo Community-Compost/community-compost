@@ -1,5 +1,12 @@
 extends layout
 
+block head_script_includes
+  script(src="https://js.stripe.com/v1/")
+  script(type='text/javascript').
+    // <![CDATA[
+    Stripe.setPublishableKey('pk_test_ibMwJhkVXUaVoS35zOT5NbER');
+    // ]]
+
 block content
   .row
     .col-md-6
@@ -8,3 +15,22 @@ block content
           span.fa.fa-sign-in
           | &nbsp;&nbsp;Register
       h3 Subscribe
+      #payment-errors
+
+      form(action='/register/#{id}/subscribe' method='POST' id='subscribe-form')
+        .row
+          .form-group.col-md-6
+            label Credit Card Number
+            input.form-control(type='text' id='card-number')
+        .row
+          .form-group.col-md-4
+            label CVC
+            input.form-control.card-cvc(type='text')
+        .row
+          .form-group.col-md-4
+            label Card Expiration Date (MM/YYYY)
+            input.form-control.card-expir-date(type='text')
+        button.btn-primary.btn-lg(type='submit' id='subscribe-button') Subscribe
+
+block footer_script_includes
+  script(src='/javascripts/subscribe.js')
