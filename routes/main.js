@@ -9,12 +9,21 @@ var user_management = new User_Management();
 
 module.exports = function(app, passport, auth) {
   app.get('/', function(req, res) {
-    console.log(req.isAuthenticated());
-    res.render('index', {title: 'Home', loggedin: req.isAuthenticated(), id: req.user.id});
+    if (req.isAuthenticated()) {
+      user_id = req.user.id;
+    } else {
+      user_id = 0.
+    }
+    res.render('index', {title: 'Home', loggedin: req.isAuthenticated(), id: user_id});
   });
 
   app.get('/login', function(req, res) {
-    res.render('login', {title: 'Login', message: req.flash('loginMessage'), loggedin: req.isAuthenticated(), id: req.user.id});
+    if (req.isAuthenticated()) {
+      user_id = req.user.id;
+    } else {
+      user_id = 0.
+    }
+    res.render('login', {title: 'Login', message: req.flash('loginMessage'), loggedin: req.isAuthenticated(), id: user_id});
   });
 
   app.post('/login', passport.authenticate('local-login', {
@@ -30,7 +39,12 @@ module.exports = function(app, passport, auth) {
   });
 
   app.get('/register', function(req, res) {
-    res.render('register_start', {title: 'Register', message: req.flash('registerMessage'), loggedin: req.isAuthenticated(), id: req.user.id});
+    if (req.isAuthenticated()) {
+      user_id = req.user.id;
+    } else {
+      user_id = 0.
+    }
+    res.render('register_start', {title: 'Register', message: req.flash('registerMessage'), loggedin: req.isAuthenticated(), id: user_id});
   });
 
   app.post('/register', passport.authenticate('local-register', {

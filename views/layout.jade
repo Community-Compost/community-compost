@@ -31,7 +31,7 @@ html(lang='en')
               li
                 a(href='/logout')
                   button.btn.btn-success(type='button') Logout
-              if (title != 'Profile')
+              if (title != 'Profile' && id != 0)
                 li
                   a(href='/#{id}/profile')
 
