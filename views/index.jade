@@ -39,15 +39,15 @@ block content
 
       hr.featurette-divider
       .row
-        .col-md-4.text-center
+        .col-md-4.text-center.icon
           img.img-circle(src='/images/icon1.png')
           h3 Join
           p
-            | Sign up by clicking the button below. We will send you an empty bin so you can start collecting compostables right away.
+            | Sign up by clicking the button below. We will send you an empty bin so you can start collecting compostables right away for $4 a week (that's just 57 cents a day!).
           p
             a.btn.btn-success(href='/register', role='button') Sign up Now!
         // /.col-lg-4
-        .col-md-4.text-center
+        .col-md-4.text-center.icon
           img.img-circle(src='/images/icon2.png')
           h3 Pickup
           p
@@ -55,7 +55,7 @@ block content
           p
             a.btn.btn-success(href='/register', role='button') Be Green
         // /.col-lg-4
-        .col-mc-4.text-center
+        .col-mc-4.text-center.icon
           img.img-circle(src='/images/icon3.png')
           h3 Community
           p
@@ -76,6 +76,8 @@ block content
             div.sub See for yourself.
           p.lead
             | Nearly 30% of landfill waste is compostable. Reduce waste - Support local farms and gardens
+            br
+            br
             a.btn.btn-success(href='/register', role='button') Get A Compost Bin
       hr.featurette-divider(id='education')
       .row.featurette
@@ -83,6 +85,7 @@ block content
           h2.featurette-heading
             | Educate Yourself
             div.sub Links and Resources
+          br
           ul
             li
               a(href='http://compostingcouncil.org/composting-for-teachers-and-students/') US Composting Council

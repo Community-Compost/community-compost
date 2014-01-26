@@ -3,10 +3,10 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-bottom: 40px;
+  padding:0 0 40px 0;
   color: #000000;
   font-family:'Helvetica Neue', 'Helvetica','Ariel' !important;
-  min-width:500px;
+  min-width:600px;
 }
 
 
@@ -167,6 +167,7 @@ margin-right: auto;
 .featurette.first .top-img{
   height:430px;
   margin-top:40px;
+  margin-bottom: -10px;
 
   transform:rotate(0deg);
   -ms-transform:rotate(0deg); /* IE 9 */
@@ -217,12 +218,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   margin-right: 10px;
 }
 
+.icon{
+  margin-bottom:50px;
+}
 
 /* Featurettes
 ------------------------- */
 
 .featurette-divider {
-  margin: 50px 0; /* Space out the Bootstrap <hr> more */
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
