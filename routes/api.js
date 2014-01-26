@@ -19,7 +19,7 @@ module.exports = function(app) {
   });
 
   app.post('/api/:id', function(req, res) {
-    api_provider.setWeight(req.body.bin_id, req.body.weight, function(error, data) {
+    api_provider.setWeight(req.params.id, req.body.weight, function(error, data) {
       if (error)
         res.send('Error');
 
