@@ -27,7 +27,8 @@ API_Provider.prototype.getUserInfo = function(id, callback) {
  */
 API_Provider.prototype.setWeight = function(id, weight, callback) {
   var bin_id = id;
-  var bin_weight = weight;
+  var bin_weight = parseInt(weight, 10);
+  console.log(typeof(bin_weight));
   User_Profile.findOne({'bin_id': id}, function(error, data) {
     if (error)
       callback(true, "Unable to update user.")
