@@ -8,9 +8,6 @@ var user_management = new User_Management();
 /* Passport Middlware */
 
 module.exports = function(app, passport, auth) {
-  app.get('/member', function(req, res) {
-    res.render('member_profile');
-  });
   app.get('/', function(req, res) {
     res.render('index', {title: 'Home'});
   });
@@ -20,10 +17,11 @@ module.exports = function(app, passport, auth) {
   });
 
   app.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
-  }));
+  }), function(req, res) {
+    res.redirect('/' + req.user._id + '/profile');
+  });
 
   app.get('/logout', function(req, res) {
     req.logout();

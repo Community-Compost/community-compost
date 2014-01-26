@@ -19,7 +19,8 @@ User_Management = function() {};
     role: userInfo.role,
     address: userInfo.address,
     zip_code: userInfo.zip_code,
-    residents: userInfo.residents
+    residents: userInfo.residents,
+    weight: 0
   });
 
   newUserProfile.save(function(error) {

@@ -7,4 +7,5 @@ module.exports = function(app, passport, auth) {
   require('./blog')(app);
   require('./api')(app);
   require('./stripe')(app);
+  require('./users')(app, passport, auth);
 };
