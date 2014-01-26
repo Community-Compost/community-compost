@@ -12,7 +12,7 @@ module.exports = function(app, passport, auth) {
       if (error)
         res.send('Everything broke');
       console.log(data)
-      res.render('member_profile', {name: data[0].name, weight: data[0].weight, loggedin: req.isAuthenticated()});
+      res.render('member_profile', {title: 'Profile', name: data[0].name, weight: data[0].weight, loggedin: req.isAuthenticated()});
     })
   });
 
