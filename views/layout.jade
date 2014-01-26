@@ -29,10 +29,11 @@ html(lang='en')
           else if (title != 'Login' && title != "Register" && loggedin)
             ul.nav.navbar-nav.pull-right
               li
+                a(href='/#{id}/profile')
+                  button.btn.btn-primary(type='button') My Profile
+              li
                 a(href='/logout')
                   button.btn.btn-success(type='button') Logout
-              li
-                a(href='/#{id}/profile')
 
     .container
       block content
