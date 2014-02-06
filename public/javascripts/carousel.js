@@ -208,7 +208,22 @@
     imgRotate();
   });
 
+  navDropdown();
+
+  $(window).resize(function(){
+    navDropdown();
+  });
+
+
 }(jQuery);
+
+function navDropdown(){
+    if($(window).width() >= 850){
+      $('.navbar .dropdown ul').removeClass('dropdown-menu pull-right');
+    }else{
+      $('.navbar .dropdown ul').addClass('dropdown-menu pull-right');
+    }
+}
 
 function imgRotate(){
    $('img').removeClass('rotate');

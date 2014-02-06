@@ -18,7 +18,10 @@ a {
   background-color: none;
 }
 .nav li a {
-  margin: 0px;
+  margin-top: 10px;
+}
+.nav li .button {
+  margin-top: 0px;
 }
 @media (min-width: 992px) {
   .container .marketing .row .featurette .first {
@@ -28,5 +31,20 @@ a {
 @media (min-width: 768px) {
   .profile-title h1 {
     font-size: 7em;
+  }
+}
+
+@media (min-width: 850px) {
+  .navbar .dropdown .dropdown-toggle{
+    display:none;
+  }
+  .navbar .dropdown .dropdown-menu{
+    display:block;
+  }
+}
+@media (max-width: 850px) {
+  .navbar .dropdown .dropdown-menu{
+    margin-right:0;
+    margin-top:10px;
   }
 }

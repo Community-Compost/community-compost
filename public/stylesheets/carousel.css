@@ -37,6 +37,10 @@ body {
     padding-right: 0;
 }
 
+.navbar-header{
+  width:100%;
+}
+
 .navbar-inverse{
   background:transparent;
   border:none;
@@ -69,6 +73,10 @@ body {
 
   .nav{
     margin-right:20px;
+  }
+
+   .navbar-wrapper .navbar .button{
+    margin-top:0px;
   }
 
 
@@ -131,7 +139,7 @@ body {
 }
 
 .featurette.first{
-  margin-top:160px;
+  margin-top:0px;
 }
 
 .featurette.first .top-img{

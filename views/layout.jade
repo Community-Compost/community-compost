@@ -12,29 +12,36 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css') 
 
   body
-    .navbar-wrapper
-      .container
+
         .navbar(role='navigation')
           .navbar-header
             span.h1
               | Compost Denton
-          if (!loggedin && title != 'Login' && title != "Register")
-            ul.nav.navbar-nav.pull-right
-              li
-                a(href='/register')
-                  button.btn.btn-success(type='button') Sign Up
-              li
-                a(href='/login')
-                  button.btn.btn-primary(type='button') Login
-          else if (title != 'Login' && title != "Register" && loggedin)
-            ul.nav.navbar-nav.pull-right
-              if (title != 'Profile')
-                li
-                  a(href='/#{id}/profile')
-                    button.btn.btn-primary(type='button') My Profile
-              li
-                a(href='/logout')
-                  button.btn.btn-success(type='button') Logout
+            .pull-right
+              .dropdown
+                button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown', id='dropdown1')
+                  span.glyphicon.glyphicon-th-large
+                ul.dropdown-menu.pull-right.nav.navbar-nav(role='menu', aria-labelledby='dropdown1')
+                  li
+                    a(href='/register')
+                      | Partners
+                  li
+                    a(href='/register')
+                      | Pricing
+                  if (!loggedin && title != 'Login' && title != "Register")
+                    li
+                      a(href='/register').button
+                        button.btn.btn-success(type='button') Become a member
+                    li
+                      a(href='/login').button
+                        button.btn.btn-primary(type='button') Log In
+                  else if (title != 'Login' && title != "Register" && loggedin)
+                    li
+                      a(href='/#{id}/profile').button
+                        button.btn.btn-primary(type='button') My Profile
+                    li
+                      a(href='/logout').button
+                        button.btn.btn-success(type='button') Log Out
 
     .container
       block content
