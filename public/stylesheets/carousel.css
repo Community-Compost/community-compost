@@ -172,7 +172,7 @@ margin-right: auto;
   }
 }
 
-.featurette.first .top-img{
+.top-img{
   height:430px;
   margin-top:40px;
   margin-bottom: -10px;
@@ -185,7 +185,7 @@ margin-right: auto;
   -webkit-transition: all 0s; /* Safari */
 }
 
-.featurette.first .top-img .header{
+.top-img .header{
   font-weight:600;
 }
 
@@ -200,7 +200,7 @@ transform:rotate(-360deg);
 -webkit-transform:rotate(-360deg); /* Safari and Chrome */
 }
 
-.captions{
+.top-img .captions{
   position:relative;
   bottom: 120px;
   height: 160px;
@@ -270,7 +270,6 @@ background-color: #6d993f;
 
 /* REGISTRATION */
 .page-header{
-  margin: 100px 0 20px;
 }
 
 
@@ -311,7 +310,6 @@ background-color: #6d993f;
 
   .row.featurette.first {
     margin-top: 80px;
-    margin-bottom:-70px;
   }
 
 }

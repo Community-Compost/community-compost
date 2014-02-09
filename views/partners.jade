@@ -1,0 +1,31 @@
+extends layout
+
+block head_script_includes
+      link(href='/stylesheets/carousel.css', rel='stylesheet')
+
+block content
+    // Marketing messaging and featurettes
+    // Wrap the rest of the page in another container to center all the content.
+    .container.marketing
+      // START THE FEATURETTES
+      .page-header
+        h1
+          | Our Partners
+      .row
+        .col-xs-12.partners
+          h3
+            | Cardo's Farm
+          .col-sm-2.col-xs-12
+            img.img-circle(src='/images/icon2.png')
+
+          .col-sm-9.col-xs-12
+            p
+              | Copy about Cardo's Farm
+      // FOOTER
+      footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | © 2014 Compost Denton
+  block footer_script_includes
+    script(src='/javascripts/carousel.js')

@@ -1,25 +1,83 @@
 extends layout
 
+block head_script_includes
+      link(href='/stylesheets/carousel.css', rel='stylesheet')
+      link(href='/fuelux/css/fuelux.css', rel='stylesheet')
+
+
 block content
   .row
-    .col-md-6
-      .page-header
-        h1
-          | Register
-      h3 Create an Account
-      if (message.length > 0)
-        .alert.alert-danger
-          | #{message}
-      form(action='/register' method='post')
-        .form-group
-          label E-Mail
-          input.form-control(type='text' name='email')
-        .form-group
-          label Password
-          input.form-control(type='password' name='password')
-        button.btn.btn-primary.btn-lg(type='submit') Register
-      hr
-      p Already have an account?
-        a(href='/login')  Login
-      p Or go
-        a(href='/')  Home
+    .col-xs-12
+      .fuelux
+          .wizard(id='MyWizard')
+            ul.steps(style='margin-left: 0')
+              li.active(data-target='#step1')
+                span.badge.badge-info
+                  | 1
+                | Registration
+                span.chevron
+              li(data-target='#step2')
+                span.badge.badge-info
+                  | 2
+                | Service Check
+                span.chevron
+              li(data-target='#step3')
+                span.badge.badge-info
+                  | 3
+                | Billing
+                span.chevron
+              li(data-target='#step3')
+                span.badge.badge-info
+                  | 3
+                | Confirmation
+                span.chevron
+    .col-xs-12.col-md-8
+      .panel-group.registration
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
+                | Create An Account
+          #collapseOne.panel-collapse.collapse.in
+            .panel-body
+              if (message.length > 0)
+                .alert.alert-danger
+                  | #{message}
+              form(action='/register' method='post')
+                .form-group
+                  label E-Mail
+                  input.form-control(type='text' name='email')
+                .form-group
+                  label Password
+                  input.form-control(type='password' name='password')
+                button.btn.btn-primary.btn-lg(type='submit') Register
+              p Already have an account?
+                a(href='/login')  Login
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
+                | Check Your Area for Service
+          #collapseTwo.panel-collapse.collapse
+            .panel-body
+              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+                | Pay The Bills
+          #collapseThree.panel-collapse.collapse
+            .panel-body
+              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+
+
+    // FOOTER
+  footer
+    p.pull-right
+      a(href='#') Back to top
+    p
+      | © 2014 Compost Denton
+block footer_script_includes
+  script(src='/javascripts/carousel.js')
+  script(src='/fuelux/all.js')

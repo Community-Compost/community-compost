@@ -4,115 +4,101 @@ block head_script_includes
       link(href='/stylesheets/carousel.css', rel='stylesheet')
 
 block content
-    // Marketing messaging and featurettes
-    // Wrap the rest of the page in another container to center all the content.
-    .container.marketing
-      // START THE FEATURETTES
-      .row.featurette.first
-        .col-md-8.col-xs-12
-          h2.featurette-heading
-            | Feed the soil.
-            div.sub 
-              | Sustain the future.
-          p.lead
-            | Compost Dention is a community curbside composting service in Denton, TX.
-            br
-            br
-            a(href='/register').btn.btn-success.pull-right.sign-up
-              | Sign Up now!
-        .col-md-4.col-xs-12
-          .top-img
-            img.featurette-image.img-responsive(src='/images/logo.png', alt='Logo')
-            div.captions
-              div.cap.caption1.lead
-                span.header
-                  | Step 1: 
-                | Sign up and collect compostables at home.
-              div.cap.caption2.lead(style='display:none')
-                span.header
-                  | Step 2: 
-                | We pick up your compostables weekly.
-              div.cap.caption3.lead(style='display:none')
-                span.header
-                  | Step 3: 
-                | You benefit when high quality compost is returned to our community.
-
-      hr.featurette-divider
-      .row
-        .col-md-4.text-center.icon
-          img.img-circle(src='/images/icon1.png')
-          h3 Join
-          p
-            | Sign up by clicking the button below. We will send you an empty bin so you can start collecting compostables right away for $4 a week (that's just 57 cents a day!).
-          p
-            a.btn.btn-success(href='/register', role='button') Sign up Now!
-        // /.col-lg-4
-        .col-md-4.text-center.icon
-          img.img-circle(src='/images/icon2.png')
-          h3 Pickup
-          p
-            | We will pickup your compostables or you can drop them off yourself. If you like, you can trade in your compostables for completed compost!
-          p
-            a.btn.btn-success(href='/register', role='button') Be Green
-        // /.col-lg-4
-        .col-mc-4.text-center.icon
-          img.img-circle(src='/images/icon3.png')
-          h3 Community
-          p
-            | We donate compost to local gardens, who use it to fertilize their soil and produce fresh food. Local gardens sustain our community.
-          p
-            a.btn.btn-success(href='#education', role='button') Learn More
-        // /.col-lg-4
-      // /.row
-
-
-      hr.featurette-divider
-      .row.featurette.topsoil
-        .col-md-5
-          img.featurette-image.img-responsive(src='/images/photo1.jpg')
-        .col-md-7
-          h2.featurette-heading
-            | Why Compost?
-            div.sub See for yourself.
-          p.lead
-            | Nearly 30% of landfill waste is compostable. Reduce waste - Support local farms and gardens
-            br
-            br
-            a.btn.btn-success(href='/register', role='button') Get A Compost Bin
-      hr.featurette-divider(id='education')
-      .row.featurette
-        .col-md-7
-          h2.featurette-heading
-            | Educate Yourself
-            div.sub Links and Resources
+  // Marketing messaging and featurettes
+  // Wrap the rest of the page in another container to center all the content.
+  .container.marketing
+    // START THE FEATURETTES
+    .row.featurette.first
+      .col-xs-12.col-md-6.first-featurette-left
+        h2.featurette-heading
+          | Feed the soil.
+          div.sub 
+            | Sustain the future.
+        p.lead
+          | Compost Dention is a community curbside composting service in Denton, TX.
           br
-          ul
-            li
-              a(href='http://compostingcouncil.org/composting-for-teachers-and-students/') US Composting Council
-            li
-              | Guidelines for Compost Quality and Nutrient Management
-              br
-              a(href='http://www.ccme.ca/assets/pdf/compostgdlns_1340_e.pdf') 
-                | Guidelines for Compost Quality (CCME)
-              br
-              a(href='http://compostingcouncil.org/test-methods-parameters/')
-                | Composting Test Methods and Parameters (USCC)
-              br
-              a(href='http://nevegetable.org/cultural-practices/compost-and-manure-use-and-nutrient-management')
-                | New England Vegetable Management Guide (NEVegetable)
- 
+          br
+          a(href='/register').btn.btn-success.sign-up
+            | Sign Up now!
+      .col-xs-12.col-md-6
+        .video-container
+          iframe(width="560", height="315", src="//www.youtube.com/embed/NRKEo8TIGjw", frameborder="0", allowfullscreen)
 
-        .col-md-5
-          img.featurette-image.img-responsive(src='/images/photo2.jpg')
 
-      hr.featurette-divider
-      // /END THE FEATURETTES
-
-      // FOOTER
-      footer
-        p.pull-right
-          a(href='#') Back to top
+    .row
+      .col-md-4.col-sm-12.text-center.icon
+        img.img-circle(src='/images/icon1.png')
+        h3 Join
         p
-          | © 2014 Compost Denton
+          | Sign up by clicking the button below. We will send you an empty bin so you can start collecting compostables right away for $4 a week (thats just 57 cents a day!).
+        p
+          a.btn.btn-success(href='/register', role='button') Sign up Now!
+      // /.col-lg-4
+      .col-md-4.col-sm-12.text-center.icon
+        img.img-circle(src='/images/icon2.png')
+        h3 Pickup
+        p
+          | We will pickup your compostables or you can drop them off yourself. If you like, you can trade in your compostables for completed compost!
+        p
+          a.btn.btn-success(href='/register', role='button') Be Green
+      // /.col-lg-4
+      .col-md-4.col-sm-12.text-center.icon
+        img.img-circle(src='/images/icon3.png')
+        h3 Community
+        p
+          | We donate compost to local gardens, who use it to fertilize their soil and produce fresh food. Local gardens sustain our community.
+        p
+          a.btn.btn-success(href='#education', role='button') Learn More
+      // /.col-lg-4
+    // /.row
+
+
+    .row.featurette.topsoil
+      .col-md-5
+
+        img.featurette-image.img-responsive(src='/images/photo1.jpg')
+
+      .col-md-7
+        h2.featurette-heading
+          | Why Compost?
+          div.sub See for yourself.
+        p.lead
+          | Nearly 30% of landfill waste is compostable. Reduce waste - Support local farms and gardens
+          br
+          br
+          a.btn.btn-success(href='/register', role='button') Get A Compost Bin
+    .row.featurette(id='education')
+      .col-md-7
+        h2.featurette-heading
+          | Educate Yourself
+          div.sub Links and Resources
+        br
+        ul
+          li
+            a(href='http://compostingcouncil.org/composting-for-teachers-and-students/') US Composting Council
+          li
+            | Guidelines for Compost Quality and Nutrient Management
+            br
+            a(href='http://www.ccme.ca/assets/pdf/compostgdlns_1340_e.pdf') 
+              | Guidelines for Compost Quality (CCME)
+            br
+            a(href='http://compostingcouncil.org/test-methods-parameters/')
+              | Composting Test Methods and Parameters (USCC)
+            br
+            a(href='http://nevegetable.org/cultural-practices/compost-and-manure-use-and-nutrient-management')
+              | New England Vegetable Management Guide (NEVegetable)
+
+
+      .col-md-5
+        img.featurette-image.img-responsive(src='/images/photo2.jpg')
+
+    // /END THE FEATURETTES
+
+    // FOOTER
+    footer
+      p.pull-right
+        a(href='#') Back to top
+      p
+        | © 2014 Compost Denton
   block footer_script_includes
     script(src='/javascripts/carousel.js')

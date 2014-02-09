@@ -17,6 +17,15 @@ module.exports = function(app, passport, auth) {
     res.render('index', {title: 'Home', loggedin: req.isAuthenticated(), id: user_id});
   });
 
+  app.get('/partners', function(req, res) {
+    if (req.isAuthenticated()) {
+      user_id = req.user.id;
+    } else {
+      user_id = 0.
+    }
+    res.render('partners', {title: 'Home', loggedin: req.isAuthenticated(), id: user_id});
+  });
+
   app.get('/login', function(req, res) {
     if (req.isAuthenticated()) {
       user_id = req.user.id;
