@@ -3,9 +3,11 @@
  */
 
 module.exports = function(app, passport, auth) {
-  require('./main')(app, passport, auth);
-  require('./blog')(app);
-  require('./api')(app);
-  require('./stripe')(app);
-  require('./users')(app, passport, auth);
+	app.get('/signup',function(req, res) {
+		res.render('launchrock');
+	});
+
+	app.get('*', function(req, res) {
+		res.redirect('/signup');
+	});
 };
