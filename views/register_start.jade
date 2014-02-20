@@ -6,38 +6,14 @@ block head_script_includes
 
 
 block content
-  .row
-    .col-xs-12
-      .fuelux
-          .wizard(id='MyWizard')
-            ul.steps(style='margin-left: 0')
-              li.active(data-target='#step1')
-                span.badge.badge-info
-                  | 1
-                | Registration
-                span.chevron
-              li(data-target='#step2')
-                span.badge.badge-info
-                  | 2
-                | Service Check
-                span.chevron
-              li(data-target='#step3')
-                span.badge.badge-info
-                  | 3
-                | Billing
-                span.chevron
-              li(data-target='#step3')
-                span.badge.badge-info
-                  | 3
-                | Confirmation
-                span.chevron
     .col-xs-12.col-md-8
-      .panel-group.registration
+      .panel-group.registration#accordion
         .panel.panel-default
           .panel-heading
             h4.panel-title
               a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
-                | Create An Account
+                | Create An Account 
+                .glyphicon.glyphicon-ok.green
           #collapseOne.panel-collapse.collapse.in
             .panel-body
               if (message.length > 0)
@@ -50,27 +26,75 @@ block content
                 .form-group
                   label Password
                   input.form-control(type='password' name='password')
-                button.btn.btn-primary.btn-lg(type='submit') Register
+                button.btn.btn-primary(type='submit') Sign up and move on
+                br
+                br
+              p.warning Sorry! That email is already taken. Did you 
+                a
+                  | forget your password
+                | ?
+
               p Already have an account?
-                a(href='/login')  Login
+                a(href='/login')  Log In
         .panel.panel-default
           .panel-heading
             h4.panel-title
               a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
-                | Check Your Area for Service
+                | Check Your Area for Service 
+                .glyphicon.glyphicon-ok.green(style='display:none')
           #collapseTwo.panel-collapse.collapse
             .panel-body
-              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              form(action='/register/#{id}' method='post')
+                .form-group
+                  label Name
+                  input.form-control(type='text' name='name')
+                .form-group
+                  label Street Address
+                  input.form-control(type='text' name='address')
+                .form-group
+                  label Zip Code
+                  input.form-control(type='text' name='zip_code')
+                .form-group
+                  label How many people live here?
+                  input.form-control(type='text' name='residents')
+                button.btn.btn-primary(type='submit') Move on  
         .panel.panel-default
           .panel-heading
             h4.panel-title
               a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
                 | Pay The Bills
+                .glyphicon.glyphicon-ok.green(style='display:none')
+
           #collapseThree.panel-collapse.collapse
             .panel-body
-              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-
-
+              form(action='/register/#{id}/subscribe/basic' method='post' id='subscribe-form')
+                .form-group
+                  label Credit Card Number
+                  input.form-control(type='text' id='card-number')
+                .form-group
+                  label CVC
+                  input.form-control(type='text' id='card-cvc')
+                .form-group
+                  label Card Expiration Date (MM/YYYY)
+                  input.form-control(type='text' id='card-expir-date')
+                  input(type='hidden' name='amount' value='2000' id='cc-amount')
+                button.btn.btn-primary(type='submit' id='subscribe-button') Subscribe
+    .col-xs-12.col-md-4
+      h2
+        | Pricing
+      p
+        | $16 per month ($4 per week) gets you:
+      ul
+        li
+          | Once five gallon compost bucket.
+          br
+          | Yours to keep - forever!
+        li
+          | Weekly compostables pickup service
+        li
+          | This Compost Denton Refrigerator Magnet
+        li
+          | This Compost Denton sticker
 
     // FOOTER
   footer

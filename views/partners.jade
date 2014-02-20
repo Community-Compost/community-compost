@@ -8,19 +8,74 @@ block content
     // Wrap the rest of the page in another container to center all the content.
     .container.marketing
       // START THE FEATURETTES
-      .page-header
+      .page-header.col-xs-12
         h1
-          | Our Partners
-      .row
-        .col-xs-12.partners
-          h3
-            | Cardo's Farm
-          .col-sm-2.col-xs-12
-            img.img-circle(src='/images/icon2.png')
+          | Become A Partner! 
+          button.btn.btn-success(data-toggle='collapse', data-target='#accordion')
+            | It's just this easy.
 
-          .col-sm-9.col-xs-12
+      .row
+        .panel-collapse.collapse.col-md-8#accordion
+          .panel-body
+            form(action='/register' method='post')
+                .form-group
+                  label Your first and last name
+                  input.form-control(type='text' name='email')
+                .form-group
+                  label Your Organization
+                  input.form-control(type='password' name='password')
+                .form-group
+                  label
+                    | I want to partner by
+                  br
+                  .btn-group-vertical.btn-radios
+                    button.btn.btn-default(type='button')
+                      | Offering rewards to Compost Denton members
+                      br
+                      .muted
+                        | (cross organizational advertising)
+                    button.btn.btn-default(type='button')
+                      | Accepting excess compost to be donated
+                    br
+                .form-group
+                  label Email Address
+                  input.form-control(type='password' name='password')
+                .form-group
+                  label Address
+                  input.form-control(type='password' name='password')
+                .form-group
+                  label Website Address
+                  input.form-control(type='password' name='password')
+                .form-group
+                  label Phone Number
+                  input.form-control(type='password' name='password')
+                .form-group
+                  label Thoughts, Questions, Details about what a partnership with Compost Denton means to you
+                  input.form-control(type='password' name='password')
+                .form-group
+                  label Short description of your organization
+                    br
+                    .muted
+                      | (this will be printed under your organization’s name)
+                  input.form-control(type='password' name='password')
+                .form-group
+                  label Your Organization
+                .form-group
+                  .btn-group
+                    button.btn.btn-default.btn-checkbox(type='button')
+                      | I would like a Compost Denton sticker to display in my storefront 
+                .form-group
+                  button.btn.btn-primary(type='submit') Sign up and move on
+      .row(style='display:none')
+        .col-xs-12.col-sm-10.partners
+          h3
+            | Partner Headline
+          .col-sm-3.col-xs-12.icon-img
+            img(src='/images/icon2.png')
+
+          .col-sm-8.col-xs-12
             p
-              | Copy about Cardo's Farm
+              | Copy about the Partner
       // FOOTER
       footer
         p.pull-right

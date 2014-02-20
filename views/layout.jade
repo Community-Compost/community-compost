@@ -24,15 +24,16 @@ html(lang='en')
                   span.glyphicon.glyphicon-th-large
                 ul.dropdown-menu.pull-right.nav.navbar-nav(role='menu', aria-labelledby='dropdown1')
                   li
-                    a(href='/register')
+                    a(href='/partners')
                       | Partners
                   li
                     a(href='/register')
                       | Pricing
-                  if (!loggedin && title != 'Login' && title != "Register")
+                  if (!loggedin && title != "Register")
                     li
                       a(href='/register').button
                         button.btn.btn-success(type='button') Become a member
+                  if (!loggedin && title != "Login")
                     li
                       a(href='/login').button
                         button.btn.btn-primary(type='button') Log In

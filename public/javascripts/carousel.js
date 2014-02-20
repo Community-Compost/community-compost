@@ -214,6 +214,27 @@
     navDropdown();
   });
 
+  /* .btn-radios */
+  $('.btn-radios').children().click(function(){
+    if(!$(this).hasClass('active')){
+      $(this).addClass('active');
+    }else{
+      $(this).removeClass('active');
+    }
+    if($(this).siblings().hasClass('active')){
+      $(this).siblings().removeClass('active')
+    }
+  });
+
+  /* .btn-checkbox */
+  $('.btn-checkbox').click(function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+    }else{
+      $(this).addClass('active')
+    }
+  });
+
 
 }(jQuery);
 
